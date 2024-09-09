@@ -9,8 +9,25 @@
    
 }
 
-nav{
-   background-color: beige;;
+.card-body{
+    background-color: black;
+    transition-duration: 0.5s;
+    border-radius: 5% 15% 5% 25%;
+}
+#acerca{
+    background-color: black;
+    border-radius: 5% 15% 5% 25%;
+}
+  .card-body:hover {
+    background: blue;
+    color: white;
+    border-radius: 5% 15% 5% 25%;
+  }
+
+  
+nav, .card-body , .card , .col-lg-4{
+   background-color: beige;
+   
 }
 /*Iconos del nav*/
 .icon-container {
