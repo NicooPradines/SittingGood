@@ -40,7 +40,36 @@ nav, .card-body , .card , .col-lg-4{
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+/*Icono de buscar*/
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+    #search-container {
+        width: 100%; /* Asegura que el contenedor use todo el ancho en pantallas pequeñas */
+      
+    }
+    #search-input {
+        font-size: 16px; /* Tamaño de fuente más grande para mejor legibilidad en móviles */
+        margin-top: -3rem;
+        margin-left: -18rem;
+        float: left;
+    }
+}
+/*-----*/
+#search-container {
+    position: relative;
+    display: inline-block;
+}
+#search-input {
+    display: none;
+    position: absolute;
+    top: 125%;
+    left: 15%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
 
+/*Detalle de los iconos*/
 .icon-container svg:hover {
     transform: scale(1.2); /* Aumenta el tamaño del icono al pasar el ratón */
 }
@@ -53,6 +82,7 @@ h1{
 .card{
     padding: 2rem;
     margin: 5rem;
+    
 }
 nav,footer{
     background-color: beige;
