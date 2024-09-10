@@ -25,15 +25,19 @@
     .btn-custom {
         width: 100%;
     }
+
     .form-range {
-    width: 100%; /* Asegura que el control deslizante ocupe todo el ancho del contenedor */
-}
+        width: 100%;
+        /* Asegura que el control deslizante ocupe todo el ancho del contenedor */
+    }
 
-#alturaValue, #pesoValue {
-    margin-left: 10px; /* Espacio entre el control deslizante y el valor */
-    font-weight: bold; /* Opcional: Hace el texto más prominente */
-}
-
+    #alturaValue,
+    #pesoValue {
+        margin-left: 10px;
+        /* Espacio entre el control deslizante y el valor */
+        font-weight: bold;
+        /* Opcional: Hace el texto más prominente */
+    }
 </style>
 
 <body>
@@ -51,14 +55,17 @@
                 <form class="d-flex justify-content-center" style="float: right;">
                     <div class="icon-container">
                         <!-- Ícono de cerrar sesion -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                          </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-box-arrow-right" viewBox="0 0 16 16" id="logoutButton">
+                            <path fill-rule="evenodd"
+                                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                            <path fill-rule="evenodd"
+                                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                        </svg>
 
                         <!-- Ícono de usuario -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            class="bi bi-person-circle" viewBox="0 0 16 16" >
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                             <path fill-rule="evenodd"
                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
@@ -73,7 +80,7 @@
         <h1>Complete el siguiente formulario</h1>
         <br>
         <div class="container form-container">
-            <form>
+            <form id="formulario">
                 <div class="mb-3">
                     <label for="sillaTipo" class="form-label">¿Qué tipo de silla necesita?</label>
                     <select id="sillaTipo" class="form-select" required>
@@ -96,17 +103,18 @@
                 <div class="mb-3">
                     <label for="colorSilla" class="form-label">¿Qué color de silla desea?</label>
                     <select id="colorSilla" class="form-select" required>
-                        <option selected>Seleccione un color</option>
-                        <option value="blanco">Blanco</option>
-                        <option value="negro">Negro</option>
+                        <option selected>Seleccione una opción</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Negro">Negro</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="modelo" class="form-label">Modelo</label>
                     <select id="modeloSilla" class="form-select" required>
                         <option selected>Seleccione un modelo</option>
-                        <option value="blanco">R</option>
-                        <option value="negro">Negro</option>
+                        <option value="Red Mesh">Cool 1D</option>
+                        <option value="Operativas">Operativas</option>
+                        <option value="Operativas">Gamer</option>
                     </select>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Ver modelos en imágenes
@@ -124,51 +132,68 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Aquí puedes mostrar imágenes de los modelos.
+                                <h1>Modelo: Cool 1D</h1>
+                                <img src="imagen/silla-office.jpg" width="50%">
+                                <p>La silla COOL es el modelo más popular, con sus personalizaciones en el
+                                    lumbar, apoyabrazos, apoyacabezas y altura, te brinda todo lo que necesitas para
+                                    conseguir la mayor comodidad y ergonomía a la hora de estar rindiendo durante largas
+                                    jornadas. </p>
+                                <h1>Modelo: Gamer</h1>
+                                <img src="imagen/silla-gamer.jpg" width="50%">
+                                <p>La silla redefine la experiencia gaming. Con ajustes personalizados
+                                    en los apoyabrazos, altura y reclinado 180º. Esto junto a su extra relleno del
+                                    respaldo, te brinda todo lo necesario para lograr la máxima comodidad y ergonomía
+                                    durante tus apasionadas sesiones de juego. ¡Potencia tu juego con estilo y confort!
+                                </p>
+                                <h1>Modelo: Operativas</h1>
+                                <img src="imagen/operativas.jpg" width="50%">
+                                <p>La silla se caracteriza por su diseño moderno y simple, de morfología orgánica y
+                                    diseño Net, la silla Link
+                                    permite su uso tanto en la oficina tradicional, como en el home office.</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Guardar cambios</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="tipoRespaldo" class="form-label">Tipo de respaldo</label>
+                    <label for="tipoRespaldo" class="form-label">Tipo de reclinación</label>
                     <select id="tipoRespaldo" class="form-select" required>
                         <option selected>Seleccione una opción</option>
-                        <option value="1">Opción 1</option>
-                        <option value="2">Opción 2</option>
-                        <option value="3">Opción 3</option>
+                        <option value="0°">0°</option>
+                        <option value="90° - 125°">90° - 125°</option>
+                        <option value="125° - 180°">125° - 180°</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="apoyacabezas" class="form-label">¿Con apoyacabezas / cervical?</label>
                     <select id="apoyacabezas" class="form-select" required>
                         <option selected>Seleccione una opción</option>
-                        <option value="1">Sí</option>
-                        <option value="2">No</option>
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="reclinable" class="form-label">¿Reclinable?</label>
                     <select id="reclinable" class="form-select" required>
                         <option selected>Seleccione una opción</option>
-                        <option value="1">Sí</option>
-                        <option value="2">No</option>
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="giratoria" class="form-label">¿Giratoria?</label>
-                    <select id="giratoria" class="form-select"required>
+                    <select id="giratoria" class="form-select" required>
                         <option selected>Seleccione una opción</option>
-                        <option value="1">Sí</option>
-                        <option value="2">No</option>
+                        <option value="Sí">Sí</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-success btn-custom">Enviar información</button>
+                    <button type="button" class="btn btn-success btn-custom" onclick="enviarFormulario()">Enviar
+                        información</button>
                 </div>
             </form>
         </div>
@@ -250,6 +275,20 @@
     </footer>
     <script>
         /*Medidas*/
+        //Cerrar sesion
+
+        document.getElementById('logoutButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Evita que el botón realice alguna acción por defecto
+
+            // Elimina cualquier dato en localStorage o sessionStorage
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Redirige al usuario a la página de inicio de sesión
+            window.location.href = "login.html"; // Cambia "login.html" a la ruta de tu página de inicio de sesión
+        });
+
+
         // Función para actualizar el valor del control deslizante
         function updateRangeValue(rangeInput, valueDisplay) {
             valueDisplay.textContent = rangeInput.value;
@@ -272,6 +311,34 @@
 
         pesoInput.addEventListener('input', function () {
             updateRangeValue(pesoInput, pesoValue);
+        });
+
+        function enviarFormulario() {
+            // Captura los datos del formulario
+            const sillaTipo = document.getElementById('sillaTipo').value;
+            const altura = document.getElementById('altura').value;
+            const peso = document.getElementById('peso').value;
+            const colorSilla = document.getElementById('colorSilla').value;
+            const modeloSilla = document.getElementById('modeloSilla').value;
+            const tipoRespaldo = document.getElementById('tipoRespaldo').value;
+            const apoyacabezas = document.getElementById('apoyacabezas').value;
+            const reclinable = document.getElementById('reclinable').value;
+            const giratoria = document.getElementById('giratoria').value;
+
+            // Construye la URL con los parámetros
+            const url = `resultados.html?sillaTipo=${encodeURIComponent(sillaTipo)}&altura=${encodeURIComponent(altura)}&peso=${encodeURIComponent(peso)}&colorSilla=${encodeURIComponent(colorSilla)}&modeloSilla=${encodeURIComponent(modeloSilla)}&tipoRespaldo=${encodeURIComponent(tipoRespaldo)}&apoyacabezas=${encodeURIComponent(apoyacabezas)}&reclinable=${encodeURIComponent(reclinable)}&giratoria=${encodeURIComponent(giratoria)}`;
+
+            // Redirige a la página resultados.html con los datos del formulario
+            window.location.href = url;
+        }
+
+        // Actualiza los valores mostrados en el rango cuando cambie
+        document.getElementById('altura').addEventListener('input', function () {
+            document.getElementById('alturaValue').textContent = this.value;
+        });
+
+        document.getElementById('peso').addEventListener('input', function () {
+            document.getElementById('pesoValue').textContent = this.value;
         });
     </script>
 
